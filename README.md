@@ -64,7 +64,29 @@ variable "ec2_key_public_key" {
 }
 ```
 
-### Remote State Creation
+### Curl
+
+***Accept invalid certs***
+```
+-k
+```
+***Show verbose output (headers)***
+```
+-v
+```
+***/dev/null send the output of the request to dev null (the html etc)***
+```
+-o
+```
+***I then peg on headers i'm interested on with:***
+```
+-H 'name: value
+```
+***So an example:***
+```
+curl -o /dev/null -v -H "x-worker-debug: true" https://m-qa.atcdn.co.uk/media/a/media/w400h300/f5bd53d2c66a481f8993e3adfc251c0d.jpg
+```
+***This gets an image from our image server, but puts the actual image in /dev/null, but shows us the headers.  I pass the x-worker-debug: true header in the request too***
 
 **Navigate into the state directory**
 
