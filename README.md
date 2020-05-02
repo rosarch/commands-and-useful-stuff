@@ -1,6 +1,9 @@
-# Provisioning
+# Collection of useful commands and other handy info
 
-## Introduction
+## k8 related stuff
+
+`kgp` # kubectl get pods
+
 
 This repository provides the [terraform](https://www.terraform.io/) configurations for provisioning an [EKS cluster](https://aws.amazon.com/eks/) on AWS.
 
