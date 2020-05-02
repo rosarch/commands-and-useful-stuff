@@ -1,3 +1,4 @@
+* TOC
 {:toc}
 
 # Collection of useful commands and other handy info
