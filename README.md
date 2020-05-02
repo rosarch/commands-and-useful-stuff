@@ -1,4 +1,5 @@
 # Collection of useful commands and other handy info
+{:toc}
 
 ## k8 related stuff
 
