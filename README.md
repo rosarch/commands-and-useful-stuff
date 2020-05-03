@@ -35,8 +35,7 @@ So it looks something like below.
 NOTE: There are no new lines in the value.
 
 ```
-variable "ec2_key_public_key" {
-    default = "ssh-rsa Adfdf3NzaC1yc2EAAAADAQABAAABAQCvAHsugzgbU1Sp2X5LsvI4Vp2iCSAUWpNTIdDv/x9mTPEA+kex98nrcYzuipu5iu50ay07SFWQlh8WYsxw03I7Tyu9Hj55Nt+kbTqsZbOoZNrGVNZjTvS6s24cdXVj6qV1p088SySXrfdfhdf6cbdgd7/3FXoiM1IFGlcmev1CC+6Dycacdhd66fbf GTgpFHLApSXe+0OekUORmBYPVrpWqSfyImSskVAED5DnfGU0mHoeCQpSd+G2dErqGvo1lAXinWBf2TphsQVGkiG45y8S75iiH5jt4We/ someperson@somelaptop"
+
 }
 ```
 
