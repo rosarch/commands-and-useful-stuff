@@ -3,9 +3,7 @@
 
 # k8 related stuff
 
-
-### kubectl get pods
-`kgp` 
+`kubectl get pods` # Get basisic pod information
 
 
 ```
