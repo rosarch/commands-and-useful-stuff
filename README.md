@@ -3,8 +3,10 @@
 
 # k8 related stuff
 
-`kubectl get pods` # Get basisic pod information
-
+kubectl get pods
+```
+kubectl get pods # Alias kgp
+```
 
 ```
 
