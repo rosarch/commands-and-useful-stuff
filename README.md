@@ -3,10 +3,13 @@
 
 # k8 related stuff
 
-kubectl get pods
 ```
-kubectl get pods # Alias kgp
+kubectl get pods # alias kgp
 ```
+```
+kubectl logs <pod-name>  # alias kl <pod-name>
+```
+
 
 ```
 
