@@ -25,7 +25,7 @@ kdp <pod> ## kubectl describe pod <pod>
 ```
 kt ## kubectx ## (Change contex / cluster)
 ```
-kn ## kubens ## (Change namespace)
+kn ## kubens ## `(Change namespace)`
 ```
 k port-forward <pod-name> 8080: <pod-port>
 
