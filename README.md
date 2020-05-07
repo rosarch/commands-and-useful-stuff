@@ -1,7 +1,8 @@
 * TOC
 {:toc}
 
-# k8 related stuff
+# K8 related stuff
+## Kubectl
 
 ```
 k ## kubectl
