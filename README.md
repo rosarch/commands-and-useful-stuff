@@ -4,40 +4,65 @@
 # k8 related stuff
 
 ```
-kubectl get pods # alias kgp
+k ## kubectl
 ```
 ```
-kubectl logs <pod-name>  # alias kl <pod-name>
+kgp ## kubectl get pods
 ```
-
-
+``` 
+kl <pod> <container> ## kubectl logs <pod> <container>
 ```
-
-The **main.tf** file is where terraform will start its executing. 
-
-The **modules** directory contains re-usable modules for each part of our infrastructure. Each module has configurable variables which are then configured according to each environment - for example **dev.tfvars**
-
-The **state** directory contains the terraform configuration for initialising the remote state.
-
-## Instructions
-
-### Preparation
-
-**Output your public key**
-
-`cat ~/.ssh/id_rsa_eks_cluster.pub`
-
-**Update code with your public key**
-
-Locate the environments/dev/variables.tf file
-
-Replace the `ssh-rsa REPLACE_ME` with your public key.
-
-So it looks something like below.
-
-NOTE: There are no new lines in the value.
-
 ```
+klf <pod> ## kubectl logs -f <pod>
+```
+```
+ # klf <pod> #
+```
+```
+kdp <pod> ## kubectl describe pod <pod>
+```
+```
+kt ## kubectx ## Change contex / cluster
+```
+kn ## kubens ## Change namespace
+```
+k port-forward <pod-name> 8080: <pod-port>
+
+
+k logs <pod-name> -p
+
+k get pods -o wide (shows more info including nodes)
+
+kgp --all-namespaces -o wide |grep -i 'consumer-gateway\|api-gateway\|tpf-web'
+
+<How to work out what the secret password is>
+k get secret guaranteed-valuation-service -o yaml
+echo "password" | base64 --decode  (ignore the last percentage sign)
+
+k describe ingress
+
+k describe service
+
+k port-forward <ingresss-pod-name> 8080:<ingress-port>
+
+k port-forward service/<service-name>  8080:<service-port>
+
+k get sites.cloudflare.com (on an external facing namespace)
+
+
+alias kl='k logs' # kubectl logs - <pod>
+ 59 alias klf='k logs -f'
+ 60 
+ 61 
+ 62 alias kd='k describe pod'
+ 63 alias kds='k describe service | ccze -A'
+ 64 alias kdi='k describe igress | ccze -A'
+ 65 alias kgscf='k get sites.cloudflare.com | ccze -A'
+ 66 alias kgpw="kubectl get pods --sort-by='.status.containerStatuses[0].restartCount' -o wide| ccze -A"
+ 67 alias ke='k exec -ti'
+ 68 alias kname='kgp --all-namespaces -o wide |grep -i'
+ 69 alias kgn='k get nodes | ccze -A'
+ 70 alias kr='kubectl get pods --all-namespaces --sort-by=".status.containerStatuses[0].restartCount" -o wide'
 
 }
 ```
@@ -139,48 +164,7 @@ This might take between 5 and 15 minutes depending on AWS.
 ```
 # commands
 
-k get pods
 
-k describe pod <pod-name>
-	
-k port-forward <pod-name> 8080: <pod-port>
-
-k logs <pod-name> 
-
-k logs <pod-name> -p
-
-k get pods -o wide (shows more info including nodes)
-
-kgp --all-namespaces -o wide |grep -i 'consumer-gateway\|api-gateway\|tpf-web'
-
-<How to work out what the secret password is>
-k get secret guaranteed-valuation-service -o yaml
-echo "password" | base64 --decode  (ignore the last percentage sign)
-
-k describe ingress
-
-k describe service
-
-k port-forward <ingresss-pod-name> 8080:<ingress-port>
-
-k port-forward service/<service-name>  8080:<service-port>
-
-k get sites.cloudflare.com (on an external facing namespace)
-
-
-alias kl='k logs' # kubectl logs - <pod>
- 59 alias klf='k logs -f'
- 60 alias kn='kubens' # Change namespace
- 61 alias kt='kubectx' # Change contex / cluster
- 62 alias kd='k describe pod'
- 63 alias kds='k describe service | ccze -A'
- 64 alias kdi='k describe igress | ccze -A'
- 65 alias kgscf='k get sites.cloudflare.com | ccze -A'
- 66 alias kgpw="kubectl get pods --sort-by='.status.containerStatuses[0].restartCount' -o wide| ccze -A"
- 67 alias ke='k exec -ti'
- 68 alias kname='kgp --all-namespaces -o wide |grep -i'
- 69 alias kgn='k get nodes | ccze -A'
- 70 alias kr='kubectl get pods --all-namespaces --sort-by=".status.containerStatuses[0].restartCount" -o wide'
  
  
  
