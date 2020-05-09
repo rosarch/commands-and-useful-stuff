@@ -2,6 +2,7 @@
 {:toc}
 
 # K8
+
 ## Kubectl
 ```
 k ### kubectl
@@ -83,6 +84,30 @@ kt ## kubectx ## (Change contex / cluster)
 kn ## kubens ## (Change namespace)
 ```
 
+## Stern
+
+```
+s <namespace> ## stern <namespace> ### Tail multiple pods and containers from Kubernetes
+```
+
+## Helm
+
+```
+h ## helm
+```
+```
+hs ## secrets view secrets.yaml ### View secrets in secrets.yaml
+```
+```
+hdp <namespace> ## helm delete --purge <namespace> ### Delete and purge a deployment
+```
+```
+hh <namespace> ## helm history <namespace> ### See release history (in a namespace)
+``
+``
+hr <namespace> <revision> ## helm rollback <namespace> <revision> ### Helm release rollback
+```
+
 # Docker
 
 docker-compose up -d` ### Start docker via compose script
@@ -98,10 +123,10 @@ stop <container> ## docker start <container> ### Start a container
 restart <container> ## docker start <container> ### Restart a container 
 ```
 ```
-stopall ## docker stop $(docker ps -a -q) ### Stops all docker containers
+dsa ## docker stop $(docker ps -a -q) ### Stops all docker containers
 ```
 ```
-rmall ## docker rm $(docker ps -a -q) ### Remove all containers
+dra ## docker rm $(docker ps -a -q) ### Remove all containers
 ```
 ```
 dps ## docker ps ### Lists all RUNNING containers
@@ -134,9 +159,6 @@ dcs <container> ## docker container stats ### Display a live stream of container
 dci <container> ## docker container inspect <container> ### Display detailed information on one or more containers
 ```
 ```
-dcp ## docker container prune ### Remove all stopped containers
-```
-```
 dcr <container> ## docker container rm <container> ### Remove one or more containers
 ```
 
@@ -154,7 +176,7 @@ dii <image> ## docker image inspect <image> ### Display detailed information on 
 di ## docker image ls ### List images
 ```
 ```
-dipr ## docker image prune ### Remove unused images
+diprune ## docker image prune ### Remove unused images
 ```
 ```
 dip ## docker image pull ### Pull an image or a repository from a registry
@@ -168,7 +190,11 @@ dir <image> ## docker image rm <image> ## Remove one or more images
 
 ## Networks
 
-> The bridge network represents the docker0 network present in all Docker installations.The bridge network will enable the connectivity to the other interfaces of the host machine as well as among containers in the same subnet. In other words,it means that a container connected to a bridge network has connectivity to the host machine, the external network (Internet) and other containers in the same subnet.Unless you specify otherwise with the docker container run --net=<NETWORK> option.
+> The bridge network represents the docker0 network present in all Docker installations.
+> The bridge network will enable the connectivity to the other interfaces of the host machine as well as among containers in the same subnet. 
+> In other words,it means that a container connected to a bridge network has connectivity to the host machine, the external network (Internet) 
+> and other containers in the same subnet.
+> Unless you specify otherwise with the docker container run --net=<NETWORK> option.
 
 ```
 dnls ## docker network ls ### Lists available networks
