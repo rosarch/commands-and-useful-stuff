@@ -5,26 +5,38 @@
 ## Kubectl
 
 ```
-k ## kubectl
+k ### kubectl
 ```
 ```
-kgp ## kubectl get pods -o wide ## List all pods in the current namespace, with more details
+kgp ## kubectl get pods ### List all pods in the current namespace
 ```
+kgpwide ## kubectl get pods -o wide ### List all pods in the current namespace, with more details
 ``` 
-kl <pod> <container> ## kubectl logs ## get logs from single container
+kl <pod> <container> ## kubectl logs ### get logs from single container
 ```
-kgs ## kubectl get services ## List all services in the namespace
 ```
-klf <pod> <container> ## kubectl logs -f ## similar to tail -f (one container)
+kgs ## kubectl get services ### List all services in the namespace
+```
+```
+klf <pod> <container> ## kubectl logs -f ### similar to tail -f (one container)
 ```
 ```
 kdp <pod> ## kubectl describe pod <pod>
 ```
 ```
-kdp <pod> ## kubectl describe pod <pod>
+kgp <pod> -o yaml ## kubectl get poddescribe pod <pod>
 ```
 ```
 k port-forward <pod-name> 8080: <pod-port>
+```
+```
+live ## kubectl describe pod |grep -i -m 1 liveness ### List details of liveness probe
+```
+```
+ready ## kubectl describe pod |grep -i -m 1 readiness ### List details of readiness probe
+```
+```
+kgp <pod> -o yaml ## kubectl get pod my-pod -o yaml ### Get a pod's YAML
 ```
 ```
 kt ## kubectx ## (Change contex / cluster)
