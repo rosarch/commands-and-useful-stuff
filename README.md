@@ -10,6 +10,7 @@ k ### kubectl
 ```
 kgp ## kubectl get pods ### (List all pods in the current namespace)
 ```
+```
 kgpwide ## kubectl get pods -o wide ### (List all pods in the current namespace, with more details)
 ``` 
 kl <pod> <container> ## kubectl logs ### (Get logs from single container)
