@@ -3,17 +3,14 @@
 
 # K8
 ## Kubectl
-
-https://placehold.it/150/ffffff/ff0000?text=hello
-
-- ![#f03c15](https://placehold.it/150/ffffff/ff0000?text=hello) `#f03c15`
-
 ```
 k ### kubectl
 ```
 ```
-kgp ## kubectl get pods ### ![#1589F0](https://via.placeholder.com/10/1589F0/000000?text="List all pods in the current namespace")
+kgp ## kubectl get pods ### (List all pods in the current namespace)
 ```
+```
+kga ## kubectl get pods --all-namespaces ### List all pods in all namespaces
 ```
 kgpwide ## kubectl get pods -o wide ### (List all pods in the current namespace, with more details)
 ```
@@ -30,9 +27,6 @@ klf <pod> <container> ## kubectl logs -f ### (Similar to tail -f (one container)
 kdp <pod> ## kubectl describe pod <pod>
 ```
 ```
-kgp <pod> -o yaml ## kubectl get poddescribe pod <pod>
-```
-```
 k port-forward <pod-name> 8080: <pod-port>
 ```
 ```
@@ -42,7 +36,7 @@ live ## kubectl describe pod |grep -i -m 1 liveness ### (List details of livenes
 ready ## kubectl describe pod |grep -i -m 1 readiness ### (List details of readiness probe)
 ```
 ```
-kgp <pod> -o yaml ## kubectl get pod my-pod -o yaml ### (Get a pod's YAML)
+kgp <pod> -o yaml ## kubectl get <pod> -o yaml ### (Get a pod's YAML)
 ```
 ```
 kt ## kubectx ## (Change contex / cluster)
