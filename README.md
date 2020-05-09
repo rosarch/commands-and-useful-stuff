@@ -12,6 +12,7 @@ kgp ## kubectl get pods ### (List all pods in the current namespace)
 ```
 ```
 kgpwide ## kubectl get pods -o wide ### (List all pods in the current namespace, with more details)
+```
 ``` 
 kl <pod> <container> ## kubectl logs ### (Get logs from single container)
 ```
@@ -42,9 +43,10 @@ kgp <pod> -o yaml ## kubectl get pod my-pod -o yaml ### (Get a pod's YAML)
 ```
 kt ## kubectx ## (Change contex / cluster)
 ```
+```
 kn ## kubens ## (Change namespace)
 ```
-```
+
 # Docker
 
 k logs <pod-name> -p
