@@ -8,7 +8,7 @@
 k ### kubectl
 ```
 ```
-kgp ## kubectl get pods ### (List all pods in the current namespace)
+kgp ## kubectl get pods ### (https://via.placeholder.com/15/1589F0/000000?text=List all pods in the current namespace)
 ```
 ```
 kgpwide ## kubectl get pods -o wide ### (List all pods in the current namespace, with more details)
@@ -461,4 +461,10 @@ sudo /var/packages/debian-chroot/scripts/start-stop-status chroot
 MISC
 
 Update locate.db --- sudo /usr/libexec/locate.updatedb
+
+
+
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
+- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
 
