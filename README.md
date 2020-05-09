@@ -84,76 +84,49 @@ kn ## kubens ## (Change namespace)
 ```
 
 # Docker
-`docker images` **#lists all images**
+```
+di ## docker images ### Lists all docker images
+```
+```
+dps ## docker ps ### Lists all RUNNING containers
+```
+```
+dpsa ## docker ps -a ### Lists all containers
+```
+```
+de <container> /bash ## docker exec -it <container> /bash ### Jump into a /bash shell on a container
+```
+```
+dcp ## docker container prune ### Prune all stopped containers, -f to force
+```
+```
+dss ## docker stop squad squad2 ## Stops Squad servers
+```
+```
+dcs ## docker container stats ## # Display a live stream of container(s) resource usage statistics
+```
+## Networks
+
+The bridge network represents the docker0 network present in all Docker installations. Unless you specify otherwise with the docker container run --net=<NETWORK> option, the Docker daemon connects containers to this network by default.
+
+```
+dnls ## docker network ls ### Lists available networks
+```
+```
+dni <network> ## docker network inspect <network> ### Inspect config of x <network>
+```
+
+
+
 
 docker-compose up --force-recreate --build
-docker image prune -f
-
-# Curl
-
-
-***Accept invalid certs***
-```
--k
-```
-***Show verbose output (headers)***
-```
--v
-```
-***/dev/null send the output of the request to dev null (the html etc)***
-```
--o
-```
-***I then peg on headers i'm interested on with:***
-```
--H 'name: value
-```
-***So an example:***
-```
-curl -o /dev/null -v -H "x-worker-debug: true" https://m-qa.atcdn.co.uk/media/a/media/w400h300/f5bd53d2c66a481f8993e3adfc251c0d.jpg
-```
-***This gets an image from our image server, but puts the actual image in /dev/null, but shows us the headers.  I pass the x-worker-debug: true header in the request too***
 
 
 
-
-DOCKER
-
-# Docker
-
-`docker images` **#lists all images**
-
-`docker ps` **#list Show RUNNING containers**
-
-`docker ps -a` **#Shows ALL containers**
 
 `docker login` **#Login to Docker Hub**
 
-`docker exec -it <container> bash` **#connect to bash on container**
 
-`docker container top <Container name>` **#view running process**
-
-`docker container prune` **#<Remove all stopped containers**
-
-`docker container stats` **#Display a live stream of container(s) resource usage statistics**
-
-`docker container run -ti --name=GIVE_IT_A_NAME IMAGE_NAME:IMAGE_TAG` **#Download and run a container interactively and remain within the new container.**
-
-`docker container run -ti --name=ubuntu --rm ubuntu:14.04` **#If you don't want to keep a container after you exit it, use the --rm flag, when you exit the container will delete**
-
-`--name` **#Flag to set a name for the container upon creation.**
-
-`-p HOST_PORT:CONTAINER_PORT` **#Bind container port to host port, by default, Docker will bind TCP ports. If you want to bind UDP ports, use the udp suffix: -p514:514/udp**
-
-`docker container exec -ti mysql /bin/bash` **#The docker container exec command runs a command inside a running container. In this case, the command was /bin/bash, which will return you a shell session inside the container, but you could use it for any other command like ls, cat, etc. The -t (or --tty) option allocates a pseudo-TTY and the -i (or --interactive) option keeps STDIN open even if not attached.**
-
-`-v ~/docker-volume-example:/var/lib/mysql` **#Create persistant storage directory on server, use -v command to mount persistent volume**
-
-`-e MYSQL_ROOT_PASSWORD=ROOT` **#To set an env variable use -e** 
-
-`docker container exec -ti mysql env` **#Check environment variables on running container**
-
-`docker network ls` **#lists available networks**
 
 `docker network inspect bridge` **#The bridge network represents the docker0 network present in all Docker installations. Unless you specify otherwise with the docker container run --net=<NETWORK> option, the Docker daemon connects containers to this network by default.**
 
@@ -214,6 +187,40 @@ DOCKER
 `docker container top`: **Display the running processes of a container**
 
 `docker-compose up -d` **#Start docker via compose script**
+
+# Curl
+
+
+***Accept invalid certs***
+```
+-k
+```
+***Show verbose output (headers)***
+```
+-v
+```
+***/dev/null send the output of the request to dev null (the html etc)***
+```
+-o
+```
+***I then peg on headers i'm interested on with:***
+```
+-H 'name: value
+```
+***So an example:***
+```
+curl -o /dev/null -v -H "x-worker-debug: true" https://m-qa.atcdn.co.uk/media/a/media/w400h300/f5bd53d2c66a481f8993e3adfc251c0d.jpg
+```
+***This gets an image from our image server, but puts the actual image in /dev/null, but shows us the headers.  I pass the x-worker-debug: true header in the request too***
+
+
+
+
+DOCKER
+
+# Docker
+
+
 
 ZSH
 
