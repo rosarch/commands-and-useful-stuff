@@ -5,6 +5,7 @@
 ## Kubectl
 
 https://placehold.it/150/ffffff/ff0000?text=hello
+- ![#f03c15](https://placehold.it/150/ffffff/ff0000?text=hello) `#f03c15`
 
 ```
 k ### kubectl
