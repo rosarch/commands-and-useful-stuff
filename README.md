@@ -13,6 +13,7 @@ kgp ## kubectl get pods -o wide ## List all pods in the current namespace, with 
 ``` 
 kl <pod> <container> ## kubectl logs ## get logs from single container
 ```
+kgs ## kubectl get services ## List all services in the namespace
 ```
 klf <pod> <container> ## kubectl logs -f ## similar to tail -f (one container)
 ```
