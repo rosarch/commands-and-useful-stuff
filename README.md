@@ -84,8 +84,24 @@ kn ## kubens ## (Change namespace)
 ```
 
 # Docker
+
+docker-compose up -d` ### Start docker via compose script
+
+## Containers
 ```
-di ## docker images ### Lists all docker images
+start <container> ## docker stop <container> ### Stop a container 
+```
+```
+stop <container> ## docker start <container> ### Start a container 
+```
+```
+restart <container> ## docker start <container> ### Restart a container 
+```
+```
+stopall ## docker stop $(docker ps -a -q) ### Stops all docker containers
+```
+```
+rmall ## docker rm $(docker ps -a -q) ### Remove all containers
 ```
 ```
 dps ## docker ps ### Lists all RUNNING containers
@@ -94,7 +110,7 @@ dps ## docker ps ### Lists all RUNNING containers
 dpsa ## docker ps -a ### Lists all containers
 ```
 ```
-de <container> /bash ## docker exec -it <container> /bash ### Jump into a /bash shell on a container
+dce <container> /bash ## docker exec -it <container> /bash ### Jump into a /bash shell on a container
 ```
 ```
 dcp ## docker container prune ### Prune all stopped containers, -f to force
@@ -105,9 +121,54 @@ dss ## docker stop squad squad2 ## Stops Squad servers
 ```
 dcs ## docker container stats ## # Display a live stream of container(s) resource usage statistics
 ```
+```
+dl <container> ## docker logs <container> ## Show container logs
+```
+```
+dlf <container> ## docker logs -f <container> ### Tail -f container logs
+```
+```
+dcs <container> ## docker container stats ### Display a live stream of container(s) resource usage statistics
+```
+```
+dci <container> ## docker container inspect <container> ### Display detailed information on one or more containers
+```
+```
+dcp ## docker container prune ### Remove all stopped containers
+```
+```
+dcr <container> ## docker container rm <container> ### Remove one or more containers
+```
+
+## Images
+```
+dib ## docker image build ### Build an image from a Dockerfile
+```
+```
+dih <image> ## docker image history <image> ### Show the history of an image
+```
+```
+dii <image> ## docker image inspect <image> ### Display detailed information on one or more images
+```
+```
+di ## docker image ls ### List images
+```
+```
+dipr ## docker image prune ### Remove unused images
+```
+```
+dip ## docker image pull ### Pull an image or a repository from a registry
+```
+```
+dipush ## docker image push ### Push an image or a repository to a registry
+```
+```
+dir <image> ## docker image rm <image> ## Remove one or more images
+```
+
 ## Networks
 
-The bridge network represents the docker0 network present in all Docker installations. Unless you specify otherwise with the docker container run --net=<NETWORK> option, the Docker daemon connects containers to this network by default.
+> The bridge network represents the docker0 network present in all Docker installations.The bridge network will enable the connectivity to the other interfaces of the host machine as well as among containers in the same subnet. In other words,it means that a container connected to a bridge network has connectivity to the host machine, the external network (Internet) and other containers in the same subnet.Unless you specify otherwise with the docker container run --net=<NETWORK> option.
 
 ```
 dnls ## docker network ls ### Lists available networks
@@ -115,78 +176,12 @@ dnls ## docker network ls ### Lists available networks
 ```
 dni <network> ## docker network inspect <network> ### Inspect config of x <network>
 ```
-
-
-
-
-docker-compose up --force-recreate --build
-
-
-
-
-`docker login` **#Login to Docker Hub**
-
-
-
-`docker network inspect bridge` **#The bridge network represents the docker0 network present in all Docker installations. Unless you specify otherwise with the docker container run --net=<NETWORK> option, the Docker daemon connects containers to this network by default.**
-
-!!! NOTE "The Bridge Network - The bridge network will enable the connectivity to the other interfaces of the host machine as well as among containers in the same subnet. In other words, it means that a container connected to a bridge network has connectivity to the host machine, the external network (Internet) and other containers in the same subnet."
-
-`docker network create my-network` **#Creates a network (rm_ command to remove)**
-
-`docker network create --subnet=172.20.0.0/16 my-network` **#When creating* a Docker network, you can specify the subnet in CIDR format**
-
-`docker container run -ti --name=ubuntu --rm --net=my-network ubuntu:14.04` **#Adds a container to the network and jump straight in**
-
-`docker container run -ti --name=ubuntu --rm --net=my-network --ip=172.20.0.100 ubuntu:14.04` **#Assign a static IP to a container**
-
-#Popular Commands
-
-**Images**
-
-`docker image build`: **Build an image from a Dockerfile**
-
-`docker image history`: **Show the history of an image**
-
-`docker image inspect`: **Display detailed information on one or more images**
-
-`docker image ls`: **List images**
-
-`docker image prune`: **Remove unused images**
-
-`docker image pull`: **Pull an image or a repository from a registry**
-
-`docker image push`: **Push an image or a repository to a registry**
-
-`docker image rm`: **Remove one or more images**
-
-**Containers**
-
-`docker container attach`: **Attach local standard input, output, and error streams to a running container**
-
-`docker container exec`: **Run a command in a running container**
-
-`docker container inspect`: **Display detailed information on one or more containers**
-
-`docker container kill`: **Kill one or more running containers**
-
-`docker container logs`: **Fetch the logs of a container** (add -f)
-
-`docker container ls`: **List containers**
-
-`docker container prune`: **Remove all stopped containers**
-
-`docker container restart`: **Restart one or more containers**
-
-`docker container rm`: **Remove one or more containers**
-
-`docker container run`: **Run a command in a new container**
-
-`docker container stats`: **Display a live stream of container(s) resource usage statistics**
-
-`docker container top`: **Display the running processes of a container**
-
-`docker-compose up -d` **#Start docker via compose script**
+```
+dnc <network-name> ## docker network create <network-name> ### Creates a network
+```
+```
+dnc --subnet=172.20.0.0/16 <network-name> ## docker network create --subnet=172.20.0.0/16 <network-name>` ### Creates a network in CIDR format
+```
 
 # Curl
 
@@ -213,16 +208,12 @@ curl -o /dev/null -v -H "x-worker-debug: true" https://m-qa.atcdn.co.uk/media/a/
 ```
 ***This gets an image from our image server, but puts the actual image in /dev/null, but shows us the headers.  I pass the x-worker-debug: true header in the request too***
 
+# ZSH
 
+# MAC
 
+# Ubuntu 
 
-DOCKER
-
-# Docker
-
-
-
-ZSH
 
 Delete a line --- CTRL + U
 
