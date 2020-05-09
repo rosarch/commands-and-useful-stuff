@@ -211,28 +211,31 @@ dnc --subnet=172.20.0.0/16 <network-name> ## docker network create --subnet=172.
 
 # Curl
 
+> cURL which is a tool/command for transferring data and is handy for troubleshooting issues on the internet 
+> [Using Curl](https://ec.haxx.se/usingcurl)
 
-***Accept invalid certs***
+
+> Handy flags
 ```
--k
+-k ### Accept invalid certs
 ```
-***Show verbose output (headers)***
 ```
--v
+-v ### Show verbose output (headers)
 ```
-***/dev/null send the output of the request to dev null (the html etc)***
 ```
--o
+-o ### output, /dev/null send the output of the request to dev null (the html etc)
 ```
-***I then peg on headers i'm interested on with:***
 ```
--H 'name: value
+-H ### Add relevant headers
 ```
-***So an example:***
+> Example
 ```
-curl -o /dev/null -v -H "x-worker-debug: true" https://m-qa.atcdn.co.uk/media/a/media/w400h300/f5bd53d2c66a481f8993e3adfc251c0d.jpg
+curl -o /dev/null -v -H "x-worker-debug: true" https://google.com
 ```
-***This gets an image from our image server, but puts the actual image in /dev/null, but shows us the headers.  I pass the x-worker-debug: true header in the request too***
+
+# DNS
+
+
 
 # ZSH
 
