@@ -1,34 +1,37 @@
 * TOC
 {:toc}
 
-# K8 related stuff
+# K8
 ## Kubectl
 
 ```
 k ## kubectl
 ```
 ```
-kgp ## kubectl get pods
+kgp ## kubectl get pods -o wide ## List all pods in the current namespace, with more details
 ```
 ``` 
-kl <pod> <container> ## kubectl logs <pod> <container>
+kl <pod> <container> ## kubectl logs ## get logs from single container
 ```
 ```
-klf <pod> ## kubectl logs -f <pod>
-```
-```
- # klf <pod> #
+klf <pod> <container> ## kubectl logs -f ## similar to tail -f (one container)
 ```
 ```
 kdp <pod> ## kubectl describe pod <pod>
+```
+```
+kdp <pod> ## kubectl describe pod <pod>
+```
+```
+k port-forward <pod-name> 8080: <pod-port>
 ```
 ```
 kt ## kubectx ## (Change contex / cluster)
 ```
 kn ## kubens ## `(Change namespace)`
 ```
-k port-forward <pod-name> 8080: <pod-port>
-
+```
+# Docker
 
 k logs <pod-name> -p
 
