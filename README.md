@@ -216,6 +216,7 @@ dnc --subnet=172.20.0.0/16 <network-name> ## docker network create --subnet=172.
 
 
 > Handy flags
+
 ```
 -k ### Accept invalid certs
 ```
@@ -228,7 +229,9 @@ dnc --subnet=172.20.0.0/16 <network-name> ## docker network create --subnet=172.
 ```
 -H ### Add relevant headers
 ```
+
 > Example
+
 ```
 curl -o /dev/null -v -H "x-worker-debug: true" https://google.com
 ```
