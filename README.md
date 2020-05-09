@@ -12,7 +12,7 @@ https://placehold.it/150/ffffff/ff0000?text=hello
 k ### kubectl
 ```
 ```
-kgp ## kubectl get pods ### ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=List all pods in the current namespace)
+kgp ## kubectl get pods ### ![#1589F0](https://via.placeholder.com/10/1589F0/000000?text="List all pods in the current namespace")
 ```
 ```
 kgpwide ## kubectl get pods -o wide ### (List all pods in the current namespace, with more details)
