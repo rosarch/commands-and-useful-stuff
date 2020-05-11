@@ -212,6 +212,7 @@ dnc --subnet=172.20.0.0/16 <network-name> ## docker network create --subnet=172.
 # Curl
 
 > cURL which is a tool/command for transferring data and is handy for troubleshooting issues on the internet 
+
 > [Using Curl](https://ec.haxx.se/usingcurl)
 
 
@@ -238,50 +239,8 @@ curl -o /dev/null -v -H "x-worker-debug: true" https://google.com
 
 # DNS
 
-
-
 # ZSH
 
 # MAC
 
 # Ubuntu 
-
-
-Delete a line --- CTRL + U
-
-s
-
-ITERM
-
-• CMD + D = Vertical terminal split
-
-• CMD + T = Add a new tab
-
-• CMD + ; = Auto complete menu
-
-• CMD + SHIFT + H = Paste history
-
-• CMD + / = Shows where cursor is
-
-CMD + SHIFT + E = Search all tabs
-
-SYNOLOGY
-
-How to get netdata working
-
-sudo /var/packages/debian-chroot/scripts/start-stop-status chroot
-
-/usr/sbin/netdata
-
-/opt/netdata
-
-MISC
-
-Update locate.db --- sudo /usr/libexec/locate.updatedb
-
-
-
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
-- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
-- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
-
