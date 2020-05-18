@@ -239,6 +239,42 @@ curl -o /dev/null -v -H "x-worker-debug: true" https://google.com
 
 # DNS
 
+## Dig Command
+
+> Dig stands for (Domain Information Groper) is a network administration command-line tool for querying Domain Name System (DNS) name servers. It is useful for verifying and troubleshooting DNS problems and also to perform DNS lookups and displays the answers that are returned from the name server that were queried.
+
+> Basic command
+
+```
+➜ dig exmple.com
+```
+```
+; <<>> DiG 9.10.6 <<>> exmple.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48603
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4000
+;; QUESTION SECTION:
+;exmple.com.			IN	A
+
+;; ANSWER SECTION:
+exmple.com.		299	IN	A	67.210.233.131
+
+;; Query time: 546 msec
+;; SERVER: 172.30.20.131#53(172.30.20.131)
+;; WHEN: Mon May 18 21:48:56 BST 2020
+;; MSG SIZE  rcvd: 55
+```
+> Dig + short (just brings back name server(s))
+```
+➜ dig exmple.com +short
+```
+```
+67.210.233.131
+```
 # ZSH
 
 # MAC
