@@ -208,7 +208,37 @@ dnc <network-name> ## docker network create <network-name> ### Creates a netw
 ```
 dnc --subnet=172.20.0.0/16 <network-name> ## docker network create --subnet=172.20.0.0/16 <network-name>` ### Creates a network in CIDR format
 ```
+## Healthchecks
 
+> The process started by the ENTRYPOINT or CMD of the Dockerfile runs as a PID 1. PID is an acronym for process identification number and is automatically assigned to each process when it’s created. 
+> Each process has a unique PID on any Unix-like system. A process running as PID 1 inside a container is treated specially as it ignores any signal, such as SIGINT or SIGTERM, and won’t terminate unless it’s coded to do so.
+> As long as PID 1 is up and running, the Docker engine will keep reporting the container as being up and running too.
+
+> A custom health check is specified in a Dockerfile using the HEALTHCHECK directive. The check command is executed inside the container, so make sure it’s available. 
+> As for the type of check it performs, it can be anything you might think of as long as it returns an appropriate exit-status code.
+
+> The HEALTHCHECK command can also be used with four different options:
+> --interval=DURATION (default: 30s)
+> --timeout=DURATION (default: 30s)
+> --start-period=DURATION (default: 0s)
+> --retries=N (default: 3)
+
+> The interval option specifies the number of seconds to initially wait before executing the health check and then the frequency at which subsequent health checks will be performed.
+
+> The timeout option specifies the number of seconds Docker awaits for your health check command to return an exit code before declaring it as failed (and your container as unhealthy).
+
+> The start-period option specifies the number of seconds your container needs to bootstrap. During this period, health checks with an exit code greater than zero won’t mark the container as unhealthy; however, a status code of 0 will mark the
+> container as healthy.
+
+> The retries option specifies the number of consecutive health check failures required to declare the container as unhealthy.
+
+> Example - add to Dockerfile
+
+```
+RUN apt-get update && apt-get install -y wget
+
+HEALTHCHECK CMD wget -q --method=HEAD localhost/system-status.txt
+```
 # Curl
 
 > cURL which is a tool/command for transferring data and is handy for troubleshooting issues on the internet 
