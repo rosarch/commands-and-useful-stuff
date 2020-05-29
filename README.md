@@ -96,7 +96,7 @@ s <namespace> ## stern <namespace> ### Tail multiple pods and containers from Ku
 h ## helm
 ```
 ```
-hs ## secrets view secrets.yaml ### View secrets in secrets.yaml
+hs ## helm secrets view secrets.yaml ### View secrets in secrets.yaml
 ```
 ```
 hdp <namespace> ## helm delete --purge <namespace> ### Delete and purge a deployment
